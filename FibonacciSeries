@@ -1,32 +1,39 @@
 import java.util.HashMap;
+import java.util.Scanner;
 
-public class FibonacciApp {
+public class FibonacciSeries {
 
     private static HashMap<Integer, Long> fibmap = new HashMap<>();
 
     public static long fibonacciseries(int n) {
         if (n < 0) {
-            throw new IllegalArgumentException("n should not be less than 0");
+            throw new IllegalArgumentException("n value should not be less than 0");
         }
-
-        if (n == 0) 
-		return 0;
+        if (n == 0)
+	return 0;
         if (n == 1) 
-		return 1;
+	return 1;
 
         if (fibmap.containsKey(n)) {
             return fibmap.get(n);
         }
-
         long result = fibonacciseries(n - 1) + fibonacciseries(n - 2);
-        fibmap.put(n, result); 
+        fibmap.put(n, result);
         return result;
     }
 
     public static void main(String[] args) {
-        int pos = 500;
-        long result = fibonacciseries(pos); 
-		System.out.println("Result is" +result);
-		
+        Scanner scanner = new Scanner(System.in);
+        try {
+            System.out.print("Enter  position for Fibonacci series :");
+            int pos = scanner.nextInt();
+                long result = fibonacciseries(pos);
+                System.out.println("Fibonacci no at position " + pos + " is: " + result);
+            
+        } catch (Exception e) {
+            System.out.println("Please enter valid input");
+        } finally {
+            scanner.close();
+        }
     }
 }
