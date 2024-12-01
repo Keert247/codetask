@@ -1,6 +1,4 @@
-import java.util.*;
-
-public class BalancedSubstringFinder {
+BalancedSubstringubstring {
     public static String[] getBalancedSubstrings(String s) {
         List<String> longsubstr = new ArrayList<>();
         int maxLength = 0;
