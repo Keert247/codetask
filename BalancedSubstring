@@ -1,4 +1,4 @@
-BalancedSubstringubstring {
+BalancedSubstring {
     public static String[] getBalancedSubstrings(String s) {
         List<String> longsubstr = new ArrayList<>();
         int maxLength = 0;
